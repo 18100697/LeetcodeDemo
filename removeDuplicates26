@@ -1,0 +1,30 @@
+//方法1：
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        Map<Integer,Integer> map = new TreeMap<>();
+        int num = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if(!map.containsKey(nums[i])) {
+                map.put(nums[i],i);
+                nums[num] = nums[i];
+                num++;
+            }
+        }
+        return map.size();
+    }
+}
+
+
+//方法2：双指针（最优解）
+class Solution {
+  public int removeDuplicates(int[] nums) {
+    int i = 0;
+    for(int j = 1; j < nums.length; j++) {
+      i++;
+      nums[i] = nums[j];
+    }
+    return i + 1;
+  }
+}
+
+//‘双指针思想’要多使用，极高效
