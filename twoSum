@@ -25,6 +25,7 @@ class Solution {
       if(map.containsKey(target - arr[i])) {
         return new int[]{i,map.get(target - arr[i])};
       }
+      map.put(arr[i],i);
     }
     throw new IllegalArgumentException("No exist two Sum");
   }
