@@ -1,0 +1,19 @@
+class Solution{
+  public String addBinary(String a, String b) {
+    StringBuilder sb = new StringBuilder();
+    int sum = 0, init = 0;
+    for(int i = a.length() - 1, j = b.length() - 1; i >= 0 || j >= 0; i--, j--) {
+      sum = init;
+      sum += i >= 0 ? a.charAt(i) - '0' : 0;
+      sum += j >= 0 ? b.charAt(j) - '0' : 0;
+      
+      sb.append(sum % 2);
+      init = sum / 2;
+    }
+    sb.append(init == 1 ? init : "");
+    return sb.reverse().toString();
+  }
+}
+
+//1.注意边界的判断
+//2.多使用三目表达式，简化代码
