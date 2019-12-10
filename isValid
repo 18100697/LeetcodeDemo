@@ -1,3 +1,11 @@
+//1.判断String s是否为空    应用if("".equals(s) || s == null) 
+                          s.empty底层为s.length() == 0 ? true : false, s为null时会报NullPointerException
+            
+//2.stack 栈为空时，peek()和pop都会EmptyStackException，peek不会删除栈顶元素，只取
+//3.stack stack默认为[]
+//4.stack stack为[]时stack.empty() = true
+
+
 class Solution {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
