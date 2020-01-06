@@ -1,0 +1,29 @@
+方法1：所有未重复的值移动，浪费了时间
+class solution {
+    public int removeNumsVal(int[] nums, int val) {
+        int a = 0;
+        for(int i = 0; i < nums.length; i++) {
+                if(nums[i] != val) {
+                        nums[a] = nums[i];
+                        a++;
+                }
+        }
+        return a;
+    }
+}
+
+方法2：重复值移动，更加高效
+class solution {
+        public int removeNumsVal(int[] nums, int val) {
+                int a = 0;
+                int len = nums.length;
+                while(a < nums.length) {
+                        if(nums[a] == val) {
+                                nums[a] = nums[len - 1];
+                                len--;
+                        }
+                        a++;
+                }
+                return len;
+        }
+}
